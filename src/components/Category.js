@@ -49,7 +49,10 @@ const Category = () => {
               <div
                 className="recipe-card"
                 key={recipe.id}
-                onClick={() => history.push(`/recipe/${recipe.id}`)}
+                onClick={() => {
+                  history.push(`/recipe/${recipe.id}`);
+                  window.scrollTo(0, 0);
+                }}
               >
                 <img
                   className="recipe-image"
