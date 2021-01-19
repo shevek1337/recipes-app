@@ -1,0 +1,218 @@
+@media only screen and (max-width: 576px) {
+  .hide-sm {
+    display: none;
+  }
+  .container {
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .heading {
+    margin-left: 5%;
+    margin-top: 25px !important;
+  }
+  div.categories {
+    justify-content: space-around;
+    margin-bottom: 0;
+    padding: 0 2.5%;
+  }
+  div.recipes {
+    justify-content: center;
+  }
+  div.hero {
+    position: relative;
+    align-items: flex-start;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 180px;
+    padding: 20px 0;
+    margin-top: 65px;
+    .text {
+      z-index: 1;
+      margin-left: 20px;
+      p {
+        display: none;
+      }
+      button {
+        display: none;
+      }
+    }
+    .hero-image {
+      display: none;
+    }
+    .hero-image-mobile {
+      display: block;
+      max-height: 170px;
+      position: absolute;
+      right: 8px;
+      bottom: 5px;
+    }
+  }
+  .recipe-card {
+    width: 90%;
+  }
+  .recipe-image {
+    width: 100% !important;
+  }
+  .newsletter {
+    border-radius: 0 !important;
+    form {
+      input {
+        width: 200px !important;
+      }
+    }
+  }
+  footer {
+    margin: 20px 0;
+    padding: 0 5%;
+    .footer-info {
+      margin-bottom: 20px;
+    }
+    p {
+      width: 95%;
+    }
+  }
+  nav {
+    position: fixed;
+    height: auto;
+    padding: 20px;
+    z-index: 2;
+    background-color: $bg;
+    .container {
+      flex-direction: row;
+    }
+  }
+  .checkbtn {
+    display: block !important;
+    margin-left: auto;
+  }
+  .nav-links {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    margin: 0 !important;
+    z-index: 2;
+    top: 65px;
+    flex-direction: column;
+    gap: 30px;
+    left: 200%;
+    transition: all 0.5s;
+    padding-top: 50px;
+    li a {
+      font-size: 28px !important;
+    }
+  }
+  .hide {
+    left: 200% !important;
+  }
+  .show {
+    left: 0 !important;
+  }
+  #check {
+    &:checked + .nav-links {
+      left: 0;
+    }
+  }
+
+  .navbar-buttons {
+    display: none;
+  }
+  .burger {
+    height: 20px;
+  }
+  .hero {
+    margin-top: 0 !important;
+    border-radius: 20px !important;
+  }
+  .mobile-search {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex !important;
+    justify-content: center;
+    margin-top: 66px;
+    width: 95%;
+    margin-bottom: 10px;
+    @include searchInput();
+    .search-div {
+      width: 100%;
+    }
+    .search-input {
+      width: 100%;
+      margin: 0;
+      border-radius: 15px;
+    }
+    .search-result {
+      display: none !important;
+      width: 95%;
+      margin-left: 0;
+    }
+  }
+
+  .more-less {
+    width: 100%;
+    text-align: center;
+    color: $darkText !important;
+  }
+
+  .category-listing {
+    div.header {
+      margin: 0 auto 0 auto !important;
+      width: 94%;
+      border-radius: 20px !important;
+      h1 {
+        font-size: 24px !important;
+      }
+    }
+  }
+
+  .recipe {
+    width: 95%;
+    margin: 0 auto !important;
+    .info {
+      flex-direction: column;
+      .recipe-img {
+        width: 100% !important;
+      }
+      h2 {
+        font-size: 22px !important;
+        margin-left: 5px !important;
+      }
+    }
+    .rating {
+      margin-left: 10px !important;
+    }
+    .time {
+      margin-left: 10px !important;
+    }
+    .category {
+      margin-left: 10px !important;
+    }
+  }
+  .description {
+    h3 {
+      font-size: 20px !important;
+      margin-left: 5px;
+    }
+  }
+
+  .search-results {
+    margin: 0 auto !important;
+    width: 95%;
+    h2 {
+      font-size: 22px !important;
+      border-radius: 20px !important;
+    }
+  }
+
+  .error {
+    margin: 0 auto !important;
+    width: 95%;
+    height: 300px !important;
+    h2 {
+      font-size: 18px !important;
+    }
+  }
+}

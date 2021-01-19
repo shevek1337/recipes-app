@@ -1,0 +1,42 @@
+footer {
+  @include flexStart();
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 42px 0;
+  h2 {
+    font-size: 36px;
+    font-family: coiny;
+    color: $darkText;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 27px;
+    width: 350px;
+    color: $footerText;
+    margin-bottom: 10px;
+  }
+  .soc-media-icons {
+    @include flexStart();
+    gap: 23px;
+    img {
+      max-width: 40px;
+    }
+  }
+  ul {
+    max-width: 150px;
+    p {
+      font-size: 18px;
+      font-weight: bold;
+      color: $footerHeader;
+      width: 100%;
+    }
+    li {
+      color: $footerLink;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  }
+}

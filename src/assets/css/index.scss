@@ -1,0 +1,358 @@
+// Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Coiny&family=Lato:wght@100;300;400;700;900&display=swap");
+// Sass components
+@import "./reset", "./mixins", "./colors";
+// Components
+@import "./navbar";
+@import "./footer";
+@import "./media";
+* {
+  font-family: "Lato", sans-serif;
+}
+body {
+  font-family: "Lato", sans-serif;
+  background-color: $bg;
+}
+.container {
+  margin: 0 auto;
+  width: 1110px;
+}
+
+// ERROR PAGE 404
+.error {
+  @include flexCenter();
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 100px;
+  height: 500px;
+  background-color: $errorBg;
+  border-radius: 30px;
+  h1 {
+    font-size: 64px;
+  }
+  h2 {
+    font-size: 40px;
+    color: $lightText;
+  }
+  button {
+    @include darkButton();
+  }
+}
+
+// HERO IMAGE AND TEXT
+
+.hero {
+  @include flexStart();
+  background-color: $heroColor;
+  border-radius: 30px;
+  height: 400px;
+  margin-top: 100px;
+  .text {
+    margin-top: -10px;
+    margin-left: 60px;
+    width: 300px;
+    h1 {
+      font-family: Coiny;
+      font-size: 64px;
+      line-height: 70px;
+      color: $heroTitle;
+      margin-bottom: 20px;
+    }
+    p {
+      margin-left: 2px;
+      font-size: 18px;
+      color: $heroText;
+      line-height: 27px;
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: $darkText;
+      font-weight: bold;
+      padding: 0 2px;
+      span.icon {
+        background: url(../arrow.svg) no-repeat right;
+        padding-left: 25px;
+        padding-bottom: 3px;
+        transition: padding-left 0.4s ease-in;
+      }
+      &:hover {
+        span.icon {
+          padding-left: 35px;
+        }
+      }
+    }
+  }
+  .hero-image {
+    margin-left: auto;
+    margin-right: 50px;
+    margin-top: -90px;
+  }
+  .hero-image-mobile {
+    display: none;
+  }
+}
+
+// RECIPE CATEGORIES
+
+h2.heading {
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  color: $homeCategories;
+}
+
+.categories {
+  @include flexStart();
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px 0;
+  .category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $categoryCardBg;
+    padding: 25px 20px;
+    border-radius: 30px;
+    width: 100px;
+    height: 134px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    img {
+      width: 40px;
+      height: 40px;
+    }
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  .more-less {
+    color: $linkSecondary;
+    margin-left: -5px;
+    font-size: 14px;
+    transition: transform 0.2s;
+    cursor: pointer;
+    &:hover {
+      color: $linkActive;
+      transform: scale(1.2);
+    }
+  }
+}
+
+// Recent Recipes
+.recipes {
+  @include flexStart();
+  flex-wrap: wrap;
+  gap: 26px;
+  margin: 20px 0;
+  .recipe-card {
+    cursor: pointer;
+    img.recipe-image {
+      width: 350px;
+      height: 165px;
+      border-radius: 30px;
+      transition: transform 0.3s ease;
+    }
+    h4 {
+      font-size: 18px;
+      margin-top: 15px;
+      font-weight: 400;
+      line-height: 21px;
+      color: $recipeTitle;
+    }
+    .recipe-info {
+      @include flexStart();
+      margin-top: 15px;
+      .rating {
+        @include flexStart();
+        .star {
+          width: 20px;
+          height: 20px;
+          margin-right: 10px;
+        }
+        p {
+          font-size: 18px;
+        }
+      }
+      .time {
+        @include flexStart();
+        margin-left: 45px;
+        .clock {
+          margin-right: 10px;
+        }
+        p {
+          font-size: 18px;
+        }
+      }
+    }
+    &:hover {
+      img.recipe-image {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+//  Newsletter Section
+.newsletter {
+  @include flexCenter();
+  flex-direction: column;
+  gap: 20px;
+  background-color: $newsletterBg;
+  height: 260px;
+  border-radius: 30px;
+  margin-top: 42px;
+  .badge {
+    background-color: $newsletterBadge;
+    padding: 5px;
+  }
+  p {
+    font-size: 24px;
+    line-height: 28px;
+    color: $darkText;
+    text-align: center;
+  }
+  form {
+    input {
+      @include input();
+      width: 300px;
+      margin-right: 12px;
+      transition: transform 0.1s ease;
+      &:focus {
+        transform: scale(1.05);
+      }
+    }
+    button {
+      @include darkButton();
+    }
+  }
+}
+
+// Recipe
+.recipe {
+  @include flexStart();
+  align-items: flex-start;
+  flex-direction: column;
+  background: $recipeBg;
+  margin-top: 100px;
+  border-radius: 30px;
+  padding: 20px;
+  .info {
+    @include flexStart();
+    align-items: flex-start;
+    h2 {
+      margin: 10px 0 0 20px;
+      font-size: 40px;
+    }
+    .recipe-img {
+      width: 350px;
+      height: 165px;
+      border-radius: 30px;
+    }
+    .rating {
+      @include flexStart();
+      margin: 20px 0 0 20px;
+      .star {
+        width: 20px;
+        height: 20px;
+        margin: 0 5px 0 10px;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+    .time {
+      @include flexStart();
+      margin: 10px 0 0 20px;
+      .clock {
+        margin: 0 5px 0 10px;
+        width: 19px;
+        height: 19px;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+    .category {
+      @include flexStart();
+      margin: 10px 0 0 20px;
+      p {
+        font-size: 18px;
+      }
+      button {
+        margin-left: 10px;
+        background: none;
+        border: none;
+        padding: 0;
+        font-size: 16px;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+  .description {
+    margin-top: 20px;
+    h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: $darkText;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// Category Listing
+div.category-listing {
+  .header {
+    @include flexStart();
+    background: $categoryBg;
+    margin-top: 100px;
+    border-radius: 30px;
+    padding: 20px;
+    h1 {
+      font-size: 40px;
+    }
+    .links {
+      margin-left: auto;
+      @include flexCenter();
+      gap: 10px;
+      p {
+        font-size: 14px;
+      }
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        color: $linkSecondary;
+        &:hover {
+          color: $linkActive;
+        }
+      }
+    }
+  }
+}
+
+// Search Results Page
+.search-results {
+  margin-top: 100px;
+  h2 {
+    font-size: 32px;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 30px;
+  }
+}
+
+// Mobile Search
+.mobile-search {
+  display: none;
+}
